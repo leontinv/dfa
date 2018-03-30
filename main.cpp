@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     //ifstream ff("date.in");
-    int q,s,x,*f,i,j,drum,a[20][20],ok=1,k=0;
+    int q,s,x,*f,i,j,sf,a[20][20],ok=1,k=0;
     char *alfabet,*w;
     alfabet=new char;
     w=new char;
