@@ -5,34 +5,35 @@ using namespace std;
 
 int main()
 {
-    //ifstream ff("date.in");
+    ifstream ff("date.in");
     int q,s,x,*f,i,j,sf,a[20][20],ok=1,k=0;
     char *alfabet,*w;
     alfabet=new char;
     w=new char;
-    cout<<"introduceti alfabetul: \n";
-    cin>>alfabet;
-    cout<<"introduceti numarul de stari: \n";
-    cin>>q;
-    cout<<"introduceti starea initiala: \n";
-    cin>>s;
-    cout<<"introduceti numarul de stari finale: \n";
-    cin>>x;
+    while(!ff.eof()){
+    //cout<<"introduceti alfabetul: \n";
+    ff>>alfabet;
+    //cout<<"introduceti numarul de stari: \n";
+    ff>>q;
+    //cout<<"introduceti starea initiala: \n";
+    ff>>s;
+    //cout<<"introduceti numarul de stari finale: \n";
+    ff>>x;
     f=new int[x];
-    cout<<"introduceti starile finale: \n";
+    //cout<<"introduceti starile finale: \n";
     for(i=0; i<x; i++)
     {
-        cin>>f[i];
+        ff>>f[i];
     }
 
     for(i=0; i<q; i++)
         for(j=0; j<strlen(alfabet); j++)
         {
-            cout<<"a["<<i<<"]["<<j<<"]=";
-            cin>>a[i][j];
+            //cout<<"a["<<i<<"]["<<j<<"]=";
+            ff>>a[i][j];
         }
-    cout<<"introduceti cuvantul: ";
-    cin>>w;
+    //cout<<"introduceti cuvantul: ";
+    ff>>w;
     for(j=0; j<x; j++)
         if(s==f[j]&&w[0]=='*')
         {
@@ -68,5 +69,7 @@ int main()
         cout<<"cuvantul apartine";
     else
         cout<<"cuvantul nu apartine";
+        ff.close();
+    }
     return 0;
 }
